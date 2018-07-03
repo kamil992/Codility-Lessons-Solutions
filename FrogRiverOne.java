@@ -2,7 +2,7 @@ package Codility;
 
 public class FrogRiverOne {
     public static void main(String[] args) {
-        int[] a = {1,2,2,3,4,5,6,7,8,8,7};
+        int[] a = {1,2,2,3,4,5,5,6,8,8,7};
         System.out.println(solution(6,a));
         int[] b = new int[8];
 
