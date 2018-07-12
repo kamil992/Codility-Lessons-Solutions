@@ -1,5 +1,7 @@
 package Codility;
 
+import java.util.Stack;
+
 public class Fish {
 
     public static void main(String[] args) {
@@ -22,7 +24,35 @@ public class Fish {
 
     public static int solution(int[] A, int[] B) {
 
-        return 0;
+        int livingFish = 0;
+        boolean isOpposite = false;
+
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < A.length; i++) {
+
+            if (B[i] == 1) {
+                if (!isOpposite) {
+                    isOpposite = true;
+                }
+                stack.push(A[i]);
+            } else {
+                if (!isOpposite) {
+                    livingFish++;
+                } else {
+
+                    while (!stack.isEmpty() && A[i] > stack.peek()) {
+                        stack.pop();
+                    }
+
+                    if (stack.isEmpty()) {
+                        isOpposite = false;
+                        livingFish++;
+                    }
+                }
+            }
+        }
+        return stack.size() + livingFish;
     }
 
 

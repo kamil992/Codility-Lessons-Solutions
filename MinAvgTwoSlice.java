@@ -11,12 +11,36 @@ public class MinAvgTwoSlice {
         System.out.println(solution(a));
     }
 
-
+//50%
     public static int solution(int[] A){
+        float minAvg = Float.MAX_VALUE;
+        int minPossition = 0;
+        float avg = 0;
+        for(int i = 0; i < A.length - 1; i++){
+            avg = (A[i] + A[i + 1]) / 2;
+            if(avg < minAvg){
+                minAvg = avg;
+                minPossition = i;
+            }
+        }
+        for(int i = 0; i < A.length - 2; i++){
+            avg = (A[i] + A[i + 1] + A[i + 2]) / 3;
+            if(avg < minAvg){
+                minAvg = avg;
+                minPossition = i;
+            }
+        }
+        return minPossition;
+    }
+
+
+    //50%
+    public static int solution1(int[] A){
+
 
         double min = A[0] + A[1] / 2;
         double avg = 0;
-        double sum = 0;
+        double sum = A[0] + A[1];
         int result = 0;
         for(int i = 0; i < A.length - 1; i++){
             sum = A[i];
