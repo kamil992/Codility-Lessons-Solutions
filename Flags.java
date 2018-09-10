@@ -8,46 +8,8 @@ public class Flags {
     public static void main(String[] args) {
         int[] A = new int[]{1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2};
 
-        System.out.println(solution(A));
+        System.out.println(solution1(A));
 
-    }
-
-    public static int solution(int[] A) {
-        if (A.length < 3)
-            return 0;
-
-        List<Integer> intList = new ArrayList<>();
-
-        for (int i = 1; i < A.length - 1; i++) {
-            if (A[i] > A[i - 1] && A[i] > A[i + 1])
-                intList.add(i);
-        }
-
-        for (int i = 1; i <= A.length; i++) {
-
-            if (A.length % i != 0)
-                continue;
-
-            int num = 0;
-            int finalNum = A.length / i;
-
-            for (int peaks : intList) {
-
-                if (peaks / i > num)
-                    break;
-
-                if (peaks / i == num){
-                    num++;
-                }
-
-                if(num == finalNum)
-                    return finalNum;
-            }
-
-        }
-
-
-        return 0;
     }
 
 
@@ -82,5 +44,43 @@ public class Flags {
 
         return allFlags;
     }
+
+//    public static int solution(int[] A) {
+//        if (A.length < 3)
+//            return 0;
+//
+//        List<Integer> intList = new ArrayList<>();
+//
+//        for (int i = 1; i < A.length - 1; i++) {
+//            if (A[i] > A[i - 1] && A[i] > A[i + 1])
+//                intList.add(i);
+//        }
+//
+//        for (int i = 1; i <= A.length; i++) {
+//
+//            if (A.length % i != 0)
+//                continue;
+//
+//            int num = 0;
+//            int finalNum = A.length / i;
+//
+//            for (int peaks : intList) {
+//
+//                if (peaks / i > num)
+//                    break;
+//
+//                if (peaks / i == num){
+//                    num++;
+//                }
+//
+//                if(num == finalNum)
+//                    return finalNum;
+//            }
+//
+//        }
+//
+//
+//        return 0;
+//    }
 
 }
