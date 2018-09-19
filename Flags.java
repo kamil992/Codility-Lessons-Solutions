@@ -3,7 +3,7 @@ package Codility;
 import java.util.ArrayList;
 import java.util.List;
 
-//only 40%%
+//todo only 40%%
 public class Flags {
     public static void main(String[] args) {
         int[] A = new int[]{1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2};
